@@ -15,6 +15,7 @@ gem 'font-awesome-sass', '~> 5.0.9'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
+gem 'devise'
 gem 'webpacker'
 
 group :development do
