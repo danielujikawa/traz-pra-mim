@@ -1,12 +1,7 @@
-<form class="form-inline">
-  <label class="sr-only" for="inlineFormInput">Name</label>
-  <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Jane Doe">
+<%= form_tag({controller: "routes", action: "search"}, method: "post") do %>
+    <%= label_tag(:origin, "Origin:") %>
+    <%= text_field_tag(:origin) %>
+    <%= submit_tag("Search") %>
+<% end %>
 
-  <label class="sr-only" for="inlineFormInputGroup">Username</label>
-  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-    <div class="input-group-addon">@</div>
-    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
-  </div>
-
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<h2>Result</h2>
