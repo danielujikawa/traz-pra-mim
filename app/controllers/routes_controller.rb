@@ -3,6 +3,7 @@ class RoutesController < ApplicationController
   end
 
   def show
+    @route = Route.find(params[:id])
   end
 
   def new
@@ -18,5 +19,11 @@ class RoutesController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def cocktail_params
+    params.require(:route).permit(:start_date_time, :end_date_time, :origin, :destination, :capacity)
   end
 end
