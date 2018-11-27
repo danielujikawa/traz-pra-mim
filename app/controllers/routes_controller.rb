@@ -3,6 +3,16 @@ class RoutesController < ApplicationController
     @route = Route.all
   end
 
+  def home
+  end
+
+  def search
+    @origin = params[:origin]
+    @destination = params[:destination]
+    @end_date_time = params[:end_date_time]
+    @route_search = Route.where(origin: '@origin', destination: '@destination', end_date_time: '@end_date_time')
+  end
+
   def show
     @route = Route.find(params[:id])
   end

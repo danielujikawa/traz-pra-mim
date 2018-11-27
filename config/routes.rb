@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  root to: "routes#home"
   resources :users, only: [] do
     resources :routes
+  end
+
+  resources :routes, only: [] do
+    collection do                       # collection => no restaurant id in URL
+      post 'search', to: 'routes#search'    # RestaurantsController#top
+    end
   end
 
   # resoureces :routes do
