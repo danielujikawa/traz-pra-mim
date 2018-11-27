@@ -60,7 +60,7 @@ puts 'Creating Users...'
 Users_attributes = [
   {
     email: example@gmail.com ,
-    encrypted_password: '123',
+    encrypted_password: '123456',
 
   },
 ]
