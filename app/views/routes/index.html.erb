@@ -1,1 +1,42 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>All our Bringers</h1>
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="col">
+      <p>You searched for <strong><%= @query %></strong>. We found <%= @bringer.count %> bringers out of our <%= Bringer.count %> on our website.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @bringers.each do |bringer| %>
+      <div class="col-4">
+        <div class="bringer-card">
+          <div class="bringer-card-image" style="background-image: url('<%= bringer.picture_url %>')"></div>
+          <div class="bringer-card-content">
+            <div class="bringer-card-title">
+              <h4><%= bringer.name %></h4>
+            </div>
+            <p><%= bringer.address %></p>
+            <div class="flex">
+              <div class="flex">
+                <i class="material-icons mr-2">comment</i><span><%= bringer.number_of_comment %></span>
+              </div>
+              <div class="flex ml-3">
+                <i class="material-icons mr-2">euro_symbol</i> <%= bringer.price %>
+              </div>
+            </div>
+          </div>
+          <div class="bringer-card-actions">
+            <%= link_to 'More info', bringer_path(bringer) %>
+            <a href="#" class="ml-3 text-warning">Edit</a>
+            <a href="#" class="ml-3 text-danger">Remove</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
