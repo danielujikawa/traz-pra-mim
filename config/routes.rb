@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "routes#home"
   resources :users, only: [] do
-    resources :routes
+    resources :routes, only: [:index]
   end
 
   resources :routes, only: [] do
