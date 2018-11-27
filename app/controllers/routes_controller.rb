@@ -16,7 +16,7 @@ class RoutesController < ApplicationController
     @route = Route.new(route_params)
     @route.user = current_user
     if @route.save
-      redirect_to routes_path(@route)
+      redirect_to user_route_path(current_user, @route)
     else
       render 'new'
     end
@@ -28,8 +28,8 @@ class RoutesController < ApplicationController
 
   def update
     @route = Route.find(params[:id])
-    @route.update(routes_params)
-    redirect_to rouste_path(@route)
+    @route.update(route_params)
+    redirect_to user_route_path(@route)
   end
 
   def destroy
@@ -39,10 +39,6 @@ class RoutesController < ApplicationController
   end
 
   private
-
-  def routes_params
-    params.require(:route).permit(:origin, :destination, :capacity, :start_date_Time, :end_date_time)
-  end
 
   private
 
