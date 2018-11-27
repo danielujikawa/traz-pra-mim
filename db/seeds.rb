@@ -6,8 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts 'Cleaning database...'
-Routes.destroy_all
+puts 'Creating Users...'
+users_attributes = [
+  {
+    email: 'example@gmail.com',
+    password: '123456',
+
+  }
+]
+User.create!(users_attributes)
+
+user = User.first
+puts 'Finished!'
 
 puts 'Creating routes...'
 routes_attributes = [
@@ -17,6 +27,7 @@ routes_attributes = [
     origin: 'Sao Paulo',
     destination: 'Rio de janeiro',
     capacity: 'small',
+    user: user
   },
   {
     start_date_time: '01/12/2018',
@@ -24,6 +35,7 @@ routes_attributes = [
     origin: 'Sao Paulo',
     destination: 'Rio de janeiro',
     capacity: 'small',
+    user: user
   },
   {
     start_date_time: '01/12/2018',
@@ -31,6 +43,7 @@ routes_attributes = [
     origin: 'Sao Paulo',
     destination: 'Rio de janeiro',
     capacity: 'small',
+    user: user
   },
   {
     start_date_time: '01/12/2018',
@@ -38,6 +51,7 @@ routes_attributes = [
     origin: 'Sao Paulo',
     destination: 'Rio de janeiro',
     capacity: 'small',
+    user: user
   },
   {
     start_date_time: '01/12/2018',
@@ -45,24 +59,13 @@ routes_attributes = [
     origin: 'Sao Paulo',
     destination: 'Rio de janeiro',
     capacity: 'small',
+    user: user
   }
 
 ]
 
-Route.create!(Routes_attributes)
+Route.create!(routes_attributes)
 puts 'Finished!'
 
 
-puts 'Cleaning database...'
-Users.destroy_all
 
-puts 'Creating Users...'
-Users_attributes = [
-  {
-    email: example@gmail.com ,
-    encrypted_password: '123456',
-
-  },
-]
-User.create!(users_attributes)
-puts 'Finished!'

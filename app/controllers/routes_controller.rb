@@ -10,7 +10,7 @@ class RoutesController < ApplicationController
     @origin = params[:origin]
     @destination = params[:destination]
     @end_date_time = params[:end_date_time]
-    @route_search = Route.where(origin: '@origin', destination: '@destination', end_date_time: '@end_date_time')
+    @route_search = Route.where(origin: '@origin')
   end
 
   def show
@@ -47,8 +47,6 @@ class RoutesController < ApplicationController
     @route.destroy
     redirect_to routes_path
   end
-
-  private
 
   private
 

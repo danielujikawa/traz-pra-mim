@@ -1,13 +1,5 @@
-<h1>Create your own research</h1>
-
-  <div class="banner-content">
-    <form action="/routes/search" method="post">
-      Origin:<br>
-
-      <input type="text" name="Origin" value="Origin"><br>
-      Destination:<br>
-      <input type="text" name="Destination" value="Destination"><br><br>
-      <input type="submit" value="Submit">
-    </form>
-    <h1>Your own research</h1>
-  </div>
+<%= form_tag({controller: "routes", action: "search"}, method: "post") do %>
+    <%= label_tag(:origin, "Origin:") %>
+    <%= text_field_tag(:origin) %>
+    <%= submit_tag("Search") %>
+<% end %>
