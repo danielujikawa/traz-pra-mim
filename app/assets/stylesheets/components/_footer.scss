@@ -1,4 +1,9 @@
-.footer {
+.footer-inner {
+  position: relative;
+  width: 940px;
+  margin: 0 auto;
+}
+.footer{
   background: #F4F4F4;
   display: flex;
   align-items: center;
@@ -11,9 +16,16 @@
   width: 100%;
 
 }
+.footer-social{
+  max-width: 232px;
+  margin: 0;
+  text-align: right;
+}
+
 .footer-links {
   display: flex;
   align-items: center;
+  font-size: 12px;
 }
 .footer-links a {
   color: black;
@@ -27,4 +39,20 @@
 }
 .footer .fa-heart {
   color: #D23333;
+}
+
+.footer-column--links {
+  width: 219px;
+  margin-right: 32px;
+  text-align: left;
+}
+
+.footer-column {
+  float: left;
+}
+
+.u-reset {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
 }
