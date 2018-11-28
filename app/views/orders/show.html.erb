@@ -1,7 +1,24 @@
-<h3>Order Confirmation:</h3>
-<br>
-<%= button_to "Order Confirmed", root_path, class: "btn btn-success", method: "get" %>
-<br>
-<h3>You paid USD 35.00</h3>
+<h1>ORDER CONFIRMED!</h1>
 
+<h3>Check your order details</h3>
 
+<div class="row">
+  <p class="col-md-2"><strong>Price:</strong></p>
+  <p class="col-md-6"><strong>R$30.00</strong></p>
+</div>
+<div class="row">
+  <p class="col-md-2"><strong>Origin:</strong></p>
+  <p class="col-md-6">Ladeira da Gloria, 26, Gloria, Rio de Janeiro</p>
+</div>
+<div class="row">
+  <p class="col-md-2"><strong>Destination:</strong></p>
+  <p class="col-md-6">Rua Mourato Coelho, Pinheiros, Sao Paulo</p>
+</div>
+<div class="row">
+  <p class="col-md-2"><strong>Date & Time:</strong></p>
+  <p class="col-md-6">02/12/2018 - 3.50pm</p>
+</div>
+
+<br>
+<%= button_to "Back to homepage", root_path, class: "btn btn-success", method: "get" %>
+<br>
