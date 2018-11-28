@@ -76,17 +76,17 @@ puts 'Finished routes!'
 orders_attributes = [
   {
     content: 'chave',
-    routes: routes_attributes.sample,
+    route: Route.all.sample,
     user: user
   },
   {
     content: 'mochila',
-    route: routes_attributes.sample,
+    route: Route.all.sample,
     user: user
   },
   {
     content: 'cachorro',
-    route: routes_attributes.sample,
+    route: Route.all.sample,
     user: user
   }
 ]
