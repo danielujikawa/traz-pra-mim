@@ -1,19 +1,25 @@
 Rails.application.routes.draw do
+
   devise_for :users
+  # www.trazpramim.com.br
   root to: "routes#home"
+  # Logged in --> users/user_:id/routes/verbs
   resources :users, only: [] do
-    resources :routes, only: [:index]
+    resources :routes
   end
 
-  resources :routes, only: [] do
-    collection do                       # collection => no restaurant id in URL
-      post 'search', to: 'routes#search'    # RestaurantsController#top
+  # Not logged, /routes/index
+              # /routes/show
+              # /routes/search (get + post)
+  resources :routes, only: [:index, :show] do
+    collection do                         # collection => no restaurant id in URL
+      get 'search', to: 'routes#search'   #
     end
   end
 
-  # resoureces :routes do
-  #   resources :orders
-  # end
+  # Not logged, /order_:id/verbs
+  resources :orders   # /routes/order:id/verbs
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # get 'users/new', to: 'users#new', as: :new_user
   # post 'users', to: 'users#create'
