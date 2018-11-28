@@ -1,16 +1,13 @@
 class RoutesController < ApplicationController
   def index
-    @route = Route.all
+    if params[:origin]
+      @route = Route.search()
+    else
+      @route = Route.all
+    end
   end
 
   def home
-  end
-
-  def search
-    @origin = params[:origin]
-    @destination = params[:destination]
-    @end_date_time = params[:end_date_time]
-    @route_search = Route.where(origin: '@origin')
   end
 
   def show
