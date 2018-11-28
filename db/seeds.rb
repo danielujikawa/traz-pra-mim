@@ -6,6 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "Destroying all..."
+Route.destroy_all
+Order.destroy_all
+User.destroy_all
+puts "Destroyed"
+
 puts 'Creating Users...'
 users_attributes = [
   {
@@ -17,7 +23,7 @@ users_attributes = [
 User.create!(users_attributes)
 
 user = User.first
-puts 'Finished!'
+puts 'Finished user!'
 
 puts 'Creating routes...'
 routes_attributes = [
@@ -65,7 +71,25 @@ routes_attributes = [
 ]
 
 Route.create!(routes_attributes)
-puts 'Finished!'
+puts 'Finished routes!'
 
+orders_attributes = [
+  {
+    content: 'chave',
+    route: Route.all.sample,
+    user: user
+  },
+  {
+    content: 'mochila',
+    route: Route.all.sample,
+    user: user
+  },
+  {
+    content: 'cachorro',
+    route: Route.all.sample,
+    user: user
+  }
+]
 
-
+Order.create!(orders_attributes)
+puts 'Finished order!'

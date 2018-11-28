@@ -1,6 +1,7 @@
-<h2>Find your order details below:</h2>
-<p><%= @route.origin %></p>
-<p><%= @route.destination %></p>
-<p><%= @route.end_date_time %></p>
-<br><br>
-<h2>You paid USD 35.00</h2>
+<h3>Order Confirmation:</h3>
+<br>
+<%= button_to "Order Confirmed", root_path, class: "btn btn-success", method: "get" %>
+<br>
+<h3>You paid USD 35.00</h3>
+
+
