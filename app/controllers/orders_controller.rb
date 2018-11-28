@@ -1,22 +1,14 @@
 class OrdersController < ApplicationController
-  def index
-  end
-
   def show
-  end
-
-  def new
+    # @order = Order.find(params[:id])
   end
 
   def create
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
+    @route = Route.find()
+    @order = Order.new
+    @order.route = @route
+    @order.user = current_user
+    @order.save!
+    redirect_to order_show_path
   end
 end

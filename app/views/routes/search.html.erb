@@ -1,6 +1,14 @@
 <%= form_tag({controller: "routes", action: "search"}, method: "post") do %>
     <%= label_tag(:origin, "Origin:") %>
     <%= text_field_tag(:origin) %>
+
+
+    <%= label_tag(:destination, "Destination:") %>
+    <%= text_field_tag(:destination) %>
+
+    <%= label_tag(:end_date, "When:") %>
+    <%= text_field_tag(:) %>
+
     <%= submit_tag("Search") %>
 <% end %>
 
