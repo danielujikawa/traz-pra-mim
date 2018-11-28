@@ -1,9 +1,9 @@
 class RoutesController < ApplicationController
-  def index
+  def search
     if params[:origin]
-      @route = Route.search()
+      @routes = Route.search()
     else
-      @route = Route.all
+      @routes = Route.all
     end
   end
 
