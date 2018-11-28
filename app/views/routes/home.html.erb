@@ -24,15 +24,8 @@
             <option value="3">Tomorrow</option>
             <option value="4">Custom</option>
           </select>
-          <input type="submit" class="btn btn-primary btn-lg" value="Search">
+          <%=link_to "Search", search_routes_path, class: "btn btn-primary" %>
         </form>
-
-        <!--Home page form to update
-        <%= form_tag({controller: "routes", action: "search"}, method: "post") do %>
-          <%= label_tag(:origin, "Origin:") %>
-          <%= text_field_tag(:origin) %>
-          <%= submit_tag("Search") %>
-        <% end %> -->
     </div>
   </div>
 </div>
