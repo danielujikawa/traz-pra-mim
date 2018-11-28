@@ -1,6 +1,8 @@
 
 <br>
 <br>
+<div class="search">
+  <div id= "wrapper">
   <form action="#" class="form-inline">
     <select name="" id="" class="form-control input-lg" placeholder="type">
       <option value="" disabled selected hidden >Type</option>
@@ -21,52 +23,27 @@
     </select>
     <input type="submit" class="btn btn-primary btn-lg" value="Search">
   </form>
+  </div>
+</div>
 <br>
 <h1>Result</h1>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-4">
+    <% @routes.each do |route|  %>
+      <div class="col-xs-12 col-sm-4">
 
-      <!-- insert <div class="card"> -->
-      <div class="card" style="border:3px; border-radius: 25px; border-style:solid; border-color:#A9A9A9; padding: 1em;">
-        <div class="card-category"><font color="black">Price: R$25</font></div>
-        <div class="card-description">
-          <font color="black"><h2>From Sao Paulo at 16h</h2></font>
-          <font color="black"><h2>To Rio de janeiro at 18h</h2></font>
+        <!-- insert <div class="card"> -->
+        <div class="card" style="border:3px; border-radius: 25px; border-style:solid; border-color:#A9A9A9; padding: 1em;">
+          <div class="card-category"><font color="black">Price: <%#=route.price %></font></div>
+          <div class="card-description">
+            <font color="black"><h2>From <%= route.origin %> at <%= route.start_date_time.strftime("%d/%m/%y") %></h2></font>
+            <font color="black"><h2>To <%= route.destination %> at <%= route.end_date_time.strftime("%d/%m/%y")
+ %></h2></font>
+          </div>
+          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <a class="card-link" href=<%= route_path(route) %> ></a>
         </div>
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-        <a class="card-link" href="#" ></a>
       </div>
-
-    </div>
-    <div class="col-xs-12 col-sm-4">
-
-      <!-- insert <div class="card"> -->
-      <div class="card" style="border:3px; border-radius: 25px; border-style:solid; border-color:#A9A9A9; padding: 1em;">
-        <div class="card-category"><font color="black">Price: R$25</font></div>
-        <div class="card-description">
-          <font color="black"><h2>From Sao Paulo at 16h</h2></font>
-          <font color="black"><h2>To Rio de janeiro at 18h</h2></font>
-        </div>
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-        <a class="card-link" href="#" ></a>
-      </div>
-
-
-    </div>
-    <div class="col-xs-12 col-sm-4">
-
-      <!-- insert <div class="card"> -->
-      <div class="card" style="border:3px; border-radius: 25px; border-style:solid; border-color:#A9A9A9; padding: 1em;">
-        <div class="card-category"><font color="black">Price: R$25</font></div>
-        <div class="card-description">
-          <font color="black"><h2>From Sao Paulo at 16h</h2></font>
-          <font color="black"><h2>To Rio de janeiro at 18h</h2></font>
-        </div>
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-        <a class="card-link" href="#" ></a>
-      </div>
-
-    </div>
+    <% end %>
   </div>
 </div>
