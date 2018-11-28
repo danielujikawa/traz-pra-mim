@@ -1,5 +1,16 @@
-<%= form_tag({controller: "routes", action: "search"}, method: "post") do %>
-    <%= label_tag(:origin, "Origin:") %>
-    <%= text_field_tag(:origin) %>
-    <%= submit_tag("Search") %>
-<% end %>
+<div class= "Home">
+  <div class="banner">
+    <div class="banner-content">
+      <h1>Search as a sender:</h1>
+      <p>A collaborative delivery in one click</p>
+        <!--Home page form -->
+        <%= form_tag({controller: "routes", action: "search"}, method: "post") do %>
+          <%= label_tag(:origin, "Origin:") %>
+          <%= text_field_tag(:origin) %>
+          <%= submit_tag("Search") %>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+
