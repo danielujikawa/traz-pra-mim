@@ -1,43 +1,59 @@
 
 <div class="container">
+
   <div class="row">
     <div class="card-route-details">
       <div class="card-route-summary">
         <h2>ROUTE DETAILS</h2>
-        <ul>
-          <p class="card-route-content">
-            <strong>Origin: </strong>Ladeira da Gloria, 26, Gloria, Rio de Janeiro
-          </p>
-          <p class="card-route-content">
-            <strong>Destination: </strong>Rua Mourato Coelho, Pinheiros, Sao Paulo
-          </p>
-          <p class="card-route-content">
-            <strong>Date & Time: </strong>28/11/2018, 3.50pm
-          </p class="card-route-content">
-          <p>
-            <strong>Price: </strong>$30.00
-          </p>
-          <p>
-            <strong>Comment: </strong>I'm going back home as usual, and will have space in my mid-size car (Fiat Sentra), for middle-sized packages. If still in Sao Paulo downtown, I can drop off the package on the same day.
-          </p>
-        </ul>
-        <div class="card-route-bringer-details">
+        <div class="row">
+          <p class="col-md-2"><strong>Origin:</strong></p>
+          <p class="col-md-6">Ladeira da Gloria, 26, Gloria, Rio de Janeiro</p>
+        </div>
+        <div class="row">
+          <p class="col-md-2"><strong>Destination:</strong></p>
+          <p class="col-md-6">Rua Mourato Coelho, Pinheiros, Sao Paulo</p>
+        </div>
+        <div class="row">
+          <p class="col-md-2"><strong>Date & Time:</strong></p>
+          <p class="col-md-6">28/11/2018 - 3.50pm</p>
+        </div>
+        <div class="row">
+          <p class="col-md-2"><strong>Price:</strong></p>
+          <p class="col-md-6">R$30.00</p>
+        </div>
+        <div class="row">
+          <p class="col-md-2"><strong>Comment:</strong></p>
+          <p class="col-md-6">I'm going back home as usual, and will have space in my mid-size car (Fiat Sentra), for middle-sized packages. If still in Sao Paulo downtown, I can drop off the package on the same day.</p>
         </div>
       </div>
-    </div>
-
-    <div class="row">
-      <div class="card-bringer-details">
-        <img src=" " class="card-user-avatar">
-        <div class="card-bringer-infos">
-          <h2>BRINGER DETAILS</h2>
-          <ul>
-            <p><strong>Carlos</strong></p>
-            <p>32 anos</p>
-            <p>4.9/5.0</p>
-          </ul>
-        </div>
-      </div>
-      <%= link_to "Confirmar pedido", order_path, class: "btn btn-sucess" %>
     </div>
   </div>
+
+  <div class="row">
+    <div class="row">
+      <div class="card-bringer-details">
+        <div class="card-bringer-infos">
+          <h2>BRINGER DETAILS</h2>
+          <div class="col-md-1">
+            <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+          </div>
+          <div class="col-md-3">
+            <ul>
+              <p><strong>Carlos Silva</strong></p>
+              <p>32 anos</p>
+              <p>4.9/5.0</p>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <p><strong>Reviews</strong></p>
+            <p>"Carlos was super willing to help, and the delivery went completely fine. I recommend him"</p>
+            <p>"Everything ok with the delivery"</p>
+            <p>"We had some miscommunication on both parts in the beginning, but in the end everything went fine and I got my package"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= link_to "Confirm Order", order_path, class: "btn btn-primary" %>
+  </div>
+
+</div>
