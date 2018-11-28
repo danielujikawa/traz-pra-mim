@@ -3,12 +3,28 @@
     <div class="banner-content">
       <h1>Search as a sender:</h1>
       <p>A collaborative delivery in one click</p>
-        <!--Home page form -->
+
+
+        <!--Home page form  -->
+        <form action="#" class="form-inline">
+          <input type="text" class="form-control input-lg" placeholder="date of pick-up">
+          <input type="text" class="form-control input-lg" placeholder="date of delivery">
+          <select name="" id="" class="form-control input-lg" placeholder="type">
+            <option value="1">Fits in a pocket</option>
+            <option value="2">Fits in a bag</option>
+            <option value="3">Fits in a car</option>
+            <option value="4">Fits in a big car</option>
+            <option value="4">Fits in a van</option>
+          </select>
+          <input type="submit" class="btn btn-primary btn-lg" value="Search">
+        </form>
+
+        <!--Home page form to update
         <%= form_tag({controller: "routes", action: "search"}, method: "post") do %>
           <%= label_tag(:origin, "Origin:") %>
           <%= text_field_tag(:origin) %>
           <%= submit_tag("Search") %>
-        <% end %>
+        <% end %> -->
     </div>
   </div>
 </div>
