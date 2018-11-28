@@ -25,3 +25,9 @@
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 50px;
 }
+
+.form select:invalid {
+  color: gray;
+}
+
+
