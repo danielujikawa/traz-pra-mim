@@ -1,17 +1,11 @@
 class RoutesController < ApplicationController
-  # def search
-  #   if params[:address].present?
-  #     sql_query = "
-  #     routes.address @@ :query
-  #     "
-  #     @routes = Route.join(sql_query, "title ILIKE ?", "%#{params[:address]}%")
-  #   else
-  #     @routes = Route.all
-  #   end
-  # end
-
+  
   def index
-    @routes = Route.search(:search)
+    if params[:origin]
+      @routes = Route.search()
+    else
+      @routes = Route.all
+    end
   end
 
   def home
@@ -19,6 +13,7 @@ class RoutesController < ApplicationController
 
   def show
     @route = Route.find(params[:id])
+
   end
 
   def new
@@ -55,6 +50,6 @@ class RoutesController < ApplicationController
   private
 
   def route_params
-    params.require(:route).permit(:start_date_time, :end_date_time, :origin, :destination, :capacity)
+    params.require(:route).permit(:start_date_time, :end_date_time, :origin, :destination, :capacity, :price, :comment)
   end
 end
