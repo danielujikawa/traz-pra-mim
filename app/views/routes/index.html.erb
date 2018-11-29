@@ -1,25 +1,20 @@
-
-<br>
-<br>
-<h1>Result</h1>
+<h1>Search Results</h1>
 <div class="container">
+  <% @routes.each do |route|  %>
   <div class="row">
-    <% @routes.each do |route|  %>
-      <div class="col-xs-12 col-sm-4">
-
-        <!-- insert <div class="card"> -->
-        <div class="card" style="border:3px; border-radius: 25px; border-style:solid; border-color:#A9A9A9; padding: 1em;">
-          <div class="card-category"><font color="black">Price: <%#=route.price %></font></div>
+    <div class="col-xs-12 col-sm-12">
+        <div class="card" style="border:3px; border-radius: 25px; border-style:solid; border-color:#A9A9A9; padding: 1em; font-size: 2px; ">
+          <div class="card-category"><font color="black">Price: R$ <%= route.price %> </font></div>
           <div class="card-description">
-            <font color="black"><h2>From <%= route.origin %> at <%= route.start_date_time.strftime("%d/%m/%y") %></h2></font>
-            <font color="black"><h2>To <%= route.destination %> at <%= route.end_date_time.strftime("%d/%m/%y")
- %></h2></font>
+            <font color="black"><h2>Origin: <%= route.origin %> at <%= route.start_date_time.strftime("%d/%m/%y") %></h2></font>
+            <font color="black"><h2>Destination: <%= route.destination %> at <%= route.end_date_time.strftime("%d/%m/%y")%></h2></font>
           </div>
           <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
-            <a class="card-link" href=<%= route_path(route) %> ></a>
+          <a class="card-link" href=<%= route_path(route) %> ></a>
         </div>
-      </div>
+    </div>
     <% end %>
   </div>
 </div>
 
+<p><%= link_to 'Back to Homepage', "/" %></p>
