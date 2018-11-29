@@ -7,23 +7,23 @@
         <h2>ROUTE DETAILS</h2>
         <div class="row">
           <p class="col-md-2"><strong>Origin:</strong></p>
-          <p class="col-md-10">Rua Mourato Coelho, Pinheiros, Sao Paulo</p>
+          <p class="col-md-10"><%= @route.origin %></p>
         </div>
         <div class="row">
           <p class="col-md-2"><strong>Destination:</strong></p>
-          <p class="col-md-10">Ladeira da Gloria, 26, Gloria, Rio de Janeiro</p>
+          <p class="col-md-10"><%= @route.destination %></p>
         </div>
         <div class="row">
-          <p class="col-md-2"><strong>Date & Time:</strong></p>
-          <p class="col-md-10">02/12/2018 - 3.50pm</p>
+          <p class="col-md-2"><strong>Arriving date:</strong></p>
+          <p class="col-md-10"><%= @route.end_date_time.strftime("%d/%m/%y") %></p>
         </div>
         <div class="row">
-          <p class="col-md-2"><strong>Type:</strong></p>
-          <p class="col-md-10">Fits in a car</p>
+          <p class="col-md-2"><strong>Size of the item:</strong></p>
+          <p class="col-md-10"><%=@route.capacity%></p>
         </div>
         <div class="row">
           <p class="col-md-2"><strong>Price:</strong></p>
-          <p class="col-md-10">R$30.00</p>
+          <p class="col-md-10">R$<%=@route.price%></p>
         </div>
         <div class="row">
           <p class="col-md-2"><strong>Comment:</strong></p>
