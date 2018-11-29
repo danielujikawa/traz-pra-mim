@@ -5,13 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-puts "Destroying all..."
-Route.destroy_all
-Order.destroy_all
-User.destroy_all
-puts "Destroyed"
-
 puts 'Creating Users...'
 users_attributes = [
   {
@@ -30,41 +23,46 @@ routes_attributes = [
   {
     start_date_time: '01/12/2018',
     end_date_time: '02/12/2018',
-    origin: 'Sao Paulo',
-    destination: 'Rio de janeiro',
-    capacity: 'small',
+    origin: 'Avenida Paulista 110 Sao Paulo',
+    destination: 'Rua Aprazivel 18 Rio de janeiro',
+    capacity: 'Fits in a car',
+    price: '10',
     user: user
   },
   {
     start_date_time: '01/12/2018',
     end_date_time: '02/12/2018',
-    origin: 'Sao Paulo',
-    destination: 'Rio de janeiro',
-    capacity: 'small',
+    origin: 'Avenida Consolaçao 39 Sao Paulo',
+    destination: 'Rua da Gloria 13 Rio de janeiro',
+    capacity: 'Fits in a bag',
+    price: '20',
     user: user
   },
   {
     start_date_time: '01/12/2018',
     end_date_time: '02/12/2018',
-    origin: 'Sao Paulo',
-    destination: 'Rio de janeiro',
-    capacity: 'small',
+    origin: 'Rua Apinages 15 Sao Paulo',
+    destination: 'Rua Visconde de Piraja 38 Rio de janeiro',
+    capacity: 'Fits in a bag',
+    price: "14",
     user: user
   },
   {
     start_date_time: '01/12/2018',
     end_date_time: '02/12/2018',
-    origin: 'Sao Paulo',
-    destination: 'Rio de janeiro',
-    capacity: 'small',
+    origin: 'Rua Alfonso Bovero 23 Sao Paulo',
+    destination: 'Rua Aarao Reis 81 Rio de janeiro',
+    capacity: 'Fits in a pocket',
+    price: "17",
     user: user
   },
   {
     start_date_time: '01/12/2018',
     end_date_time: '02/12/2018',
-    origin: 'Sao Paulo',
-    destination: 'Rio de janeiro',
-    capacity: 'small',
+    origin: 'Avenida Pinheiros 23 Sao Paulo',
+    destination: 'Avenida Nossa Senhora 56 Rio de janeiro',
+    capacity: 'Fits in a car',
+    price: "18",
     user: user
   }
 

@@ -11,11 +11,7 @@ Rails.application.routes.draw do
   # Not logged, /routes/index
               # /routes/show
               # /routes/search (get + post)
-  resources :routes, only: [:index, :show] do
-    collection do                         # collection => no restaurant id in URL
-      get 'search', to: 'routes#search'   #
-    end
-  end
+  resources :routes, only: [:index, :show]
 
   # Not logged, /order_:id/verbs
   resources :orders   # /routes/order:id/verbs

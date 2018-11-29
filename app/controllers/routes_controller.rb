@@ -1,5 +1,5 @@
 class RoutesController < ApplicationController
-  def search
+  def index
     if params[:origin]
       @routes = Route.search()
     else
@@ -48,6 +48,6 @@ class RoutesController < ApplicationController
   private
 
   def route_params
-    params.require(:route).permit(:start_date_time, :end_date_time, :origin, :destination, :capacity)
+    params.require(:route).permit(:start_date_time, :end_date_time, :origin, :destination, :capacity, :price)
   end
 end
