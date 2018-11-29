@@ -8,14 +8,50 @@
 puts 'Creating Users...'
 users_attributes = [
   {
-    email: 'example@gmail.com',
+    email: 'flavio123@gmail.com',
     password: '123456',
+    username: 'Flavio'
+
+  },
+ {
+    email: 'rodrigo123@gmail.com',
+    password: '123456',
+    username: 'Rodrigo123'
+
+  },
+ {
+    email: 'ricardo@gmail.com',
+    password: '123456',
+    username: 'Ricardo'
+
+  },
+ {
+    email: 'flavia@msn.com',
+    password: '123456',
+    username: 'Flavia'
+
+  },
+ {
+    email: 'olivia@sfr.com',
+    password: '123456',
+    username: 'Olivia-Linda'
+
+  },
+ {
+    email: 'Alexia@aol.com',
+    password: '123456',
+    username: 'Alexia'
 
   }
 ]
 User.create!(users_attributes)
 
-user = User.first
+# user1 = User.all.sample
+# user2 = User.all.sample
+# user3 = User.all.sample
+# user4 = User.all.sample
+# user5 = User.all.sample
+users = User.all
 puts 'Finished user!'
 
 puts 'Creating routes...'
@@ -28,7 +64,7 @@ routes_attributes = [
     capacity: 'Fits in a car',
     price: '10',
     comment: "I'm going back home as usual, and will have space in my mid-size car (Fiat Sentra), for middle-sized packages. If you need the delivery in Rio de Janeiro downtown, I can drop off the package on the same day.",
-    user: user
+    user: users.sample
   },
   {
     start_date_time: '01/12/2018',
@@ -38,7 +74,7 @@ routes_attributes = [
     capacity: 'Fits in a bag',
     price: '20',
     comment: "Going to SP for the week end. I can take your item in my bag if not too heavy",
-    user: user
+    user: users.sample
   },
   {
     start_date_time: '01/12/2018',
@@ -48,7 +84,7 @@ routes_attributes = [
     capacity: 'Fits in a bag',
     price: "14",
     comment: "Going by bus. Let meet at the bus station",
-    user: user
+    user: users.sample
   },
   {
     start_date_time: '01/12/2018',
@@ -58,7 +94,7 @@ routes_attributes = [
     capacity: 'Fits in a pocket',
     price: "17",
     comment: "Going by plan. Let meet at the airport",
-    user: user
+    user: users.sample
   },
   {
     start_date_time: '01/12/2018',
@@ -68,7 +104,7 @@ routes_attributes = [
     capacity: 'Fits in a car',
     price: "18",
     comment: "I am mooving back to Rio by car, fell free to meet me at my address",
-    user: user
+    user: users.sample
   }
 
 ]
