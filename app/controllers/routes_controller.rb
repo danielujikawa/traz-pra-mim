@@ -13,6 +13,7 @@ class RoutesController < ApplicationController
 
   def show
     @route = Route.find(params[:id])
+    # @review = Review.where(user: @route.user)
 
   end
 

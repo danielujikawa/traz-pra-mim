@@ -112,23 +112,59 @@ routes_attributes = [
 Route.create!(routes_attributes)
 puts 'Finished routes!'
 
-orders_attributes = [
+
+reviews_attributes = [
   {
-    content: 'chave',
-    route: Route.all.sample,
-    user: user
+    comment: 'super willing to help, and the delivery went completely fine. I recommend.',
+    rating: 5,
+    user: users.sample
   },
   {
-    content: 'mochila',
-    route: Route.all.sample,
-    user: user
+    comment: 'Super easy to reach and meet.',
+    rating: 5,
+    user: users.sample
   },
   {
-    content: 'cachorro',
-    route: Route.all.sample,
-    user: user
+    comment: 'Nice guy. I recommend.',
+    rating: 4,
+    user: users.sample
+  },
+  {
+    comment: 'Despite some difficulties to meet, everything was ok.',
+    rating: 5,
+    user: users.sample
+  },
+  {
+    comment: 'Available and charming. I recommend.',
+    rating: 3,
+    user: users.sample
+  },
+  {
+    comment: 'Do not recommend. Could not reach him on the phone',
+    rating: 2,
+    user: users.sample
   }
 ]
+Review.create!(reviews_attributes)
+puts 'Finished review!'
 
-Order.create!(orders_attributes)
-puts 'Finished order!'
+# orders_attributes = [
+#   {
+#     content: 'chave',
+#     route: Route.all.sample,
+#     user: user
+#   },
+#   {
+#     content: 'mochila',
+#     route: Route.all.sample,
+#     user: user
+#   },
+#   {
+#     content: 'cachorro',
+#     route: Route.all.sample,
+#     user: user
+#   }
+# ]
+
+# Order.create!(orders_attributes)
+# puts 'Finished order!'
