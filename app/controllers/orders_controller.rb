@@ -4,11 +4,15 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @route = Route.find()
+    @route = Route.find(params[:route_id])
     @order = Order.new
     @order.route = @route
-    @order.user = current_user
+    @order.user = User.first
     @order.save!
-    redirect_to order_show_path
+      # if current_user
+      #   redirect_to order_show_path
+      # else
+      #   redirect_to user_session
+      # end
   end
 end

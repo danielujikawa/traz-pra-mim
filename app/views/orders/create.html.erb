@@ -1,9 +1,9 @@
 <h1>Congratulations! Your order was accepted!</h1>
 <br><br> <br>
 <h2>Find your order details below:</h2>
-<p><%= @route.user %></p>
+<p><%= @route.user.username %></p>
 <p><%= @route.origin %></p>
 <p><%= @route.destination %></p>
-<p><%= @route.end_date_time %></p>
+<p>Arriving date <%= @route.end_date_time.strftime("%d/%m/%y") %></p>
 <br><br>
-<h2>You paid USD 35.00</h2>
+<h2>You paid R$<%=@route.price%></h2>
