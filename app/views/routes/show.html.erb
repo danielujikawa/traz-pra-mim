@@ -4,7 +4,7 @@
   <div class="row">
     <div class="card-route-details">
       <div class="card-route-summary">
-        <h2>ROUTE DETAILS</h2>
+        <h2>TRIP DETAILS</h2>
         <div class="row">
           <p class="col-md-2"><strong>Origin:</strong></p>
           <p class="col-md-10"><%= @route.origin %></p>
@@ -53,7 +53,7 @@
         </div>
       </div>
     </div>
-    <%= link_to "Confirm Order", order_path, class: "btn btn-primary" %>
+    <%= button_to "Confirm Order", class: "btn btn-primary", :controller => "orders", :action => "create", params: { route_id: @route.id }  %>
   </div>
 
 </div>
