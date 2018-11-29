@@ -4,22 +4,29 @@
       <h1>A faster and cheaper delivery</h1>
       <p>Search as a sender</p>
       <!--Home page form test 3 -->
-      <form action="#" class="form-inline">
-        <select name="" id="" class="form-control input-lg" placeholder="Type">
-          <option value="" disabled selected hidden >Size of your item</option>
-          <option value="1">Fits in a pocket</option>
-          <option value="2">Fits in a bag</option>
-          <option value="3">Fits in a car</option>
-          <option value="4">Fits in a big car</option>
-          <option value="4">Fits in a van</option>
-        </select>
-        <input type="text" class="form-control input-lg" placeholder="Pick-up address">
-        <input type="text" class="form-control input-lg" placeholder="Delivery address">
-        <input type="date" name="bday">
-        <%=link_to "Search", routes_path, class: "btn btn-primary" %>
-      </form>
+
+        <%= form_tag routes_path, method: :get, class: 'form-inline' do %>
+
+          <%= select_tag :query_type, "<option>Fits in a pocket<option>Fits in a bag<option>Fits in a car<option>Fits in a big car<option>Fits in a van<option>".html_safe, :required => true, class: 'form-control', placeholder: "Size of your Item" %>
+
+          <%= text_field_tag :query_origin, params[:query_origin], :required => true, class: "form-control",
+          placeholder: "Pick-up address"
+          %>
+
+          <%= text_field_tag :query_destination, params[:query_destination], :required => true, class: "form-control",
+          placeholder: "Delivery address"
+          %>
+
+          <%= date_field_tag :query_delivery_date, "", :required => false, class: "form-control",
+          placeholder: "Delivery date"
+          %>
+
+
+        <br>
+        <br>
+
+        <%= submit_tag "Find routes", class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
 </div>
-
-
