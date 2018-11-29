@@ -1,9 +1,12 @@
 <h1>Search Results</h1>
+
 <div class="container">
+
   <% @routes.each do |route|  %>
+
   <div class="row">
     <div class="col-xs-12 col-sm-12">
-        <div class="card" style="border:3px; border-radius: 25px; border-style:solid; border-color:#A9A9A9; padding: 1em; font-size: 2px; ">
+        <div class="card" style="border:3px; border-radius: 25px; border-style:solid; border-color:#A9A9A9; padding: 1em; font-size: 2px;">
           <div class="card-category"><font color="black">Price: R$ <%= route.price %> </font></div>
           <div class="card-description">
             <font color="black"><h2>Origin: <%= route.origin %> at <%= route.start_date_time.strftime("%d/%m/%y") %></h2></font>
