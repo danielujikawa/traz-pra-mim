@@ -6,4 +6,5 @@ class Route < ApplicationRecord
   validates :origin, presence: true
   validates :destination, presence: true
   validates :capacity, presence: true
+
 end
