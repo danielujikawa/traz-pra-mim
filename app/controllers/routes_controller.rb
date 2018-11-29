@@ -49,6 +49,6 @@ class RoutesController < ApplicationController
   private
 
   def route_params
-    params.require(:route).permit(:start_date_time, :end_date_time, :origin, :destination, :capacity, :price)
+    params.require(:route).permit(:start_date_time, :end_date_time, :origin, :destination, :capacity, :price, :comment)
   end
 end
