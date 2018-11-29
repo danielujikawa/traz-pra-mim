@@ -1,5 +1,5 @@
 class RoutesController < ApplicationController
-  
+
   def index
     if params[:origin]
       @routes = Route.search()
