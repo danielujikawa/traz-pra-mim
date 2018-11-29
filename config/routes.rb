@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   # Not logged, /order_:id/verbs
   resources :orders   # /routes/order:id/verbs
-
+  resources :searches
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # get 'users/new', to: 'users#new', as: :new_user
   # post 'users', to: 'users#create'

@@ -1,10 +1,17 @@
 class RoutesController < ApplicationController
-  def search
-    if params[:origin]
-      @routes = Route.search()
-    else
-      @routes = Route.all
-    end
+  # def search
+  #   if params[:address].present?
+  #     sql_query = "
+  #     routes.address @@ :query
+  #     "
+  #     @routes = Route.join(sql_query, "title ILIKE ?", "%#{params[:address]}%")
+  #   else
+  #     @routes = Route.all
+  #   end
+  # end
+
+  def index
+    @routes = Route.search(:search)
   end
 
   def home

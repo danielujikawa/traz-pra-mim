@@ -5,21 +5,31 @@
       <p>Search as a sender</p>
       <!--Home page form test 3 -->
       <form action="#" class="form-inline">
-        <select name="" id="" class="form-control input-lg" placeholder="Type">
-          <option value="" disabled selected hidden >Size of your item</option>
-          <option value="1">Fits in a pocket</option>
-          <option value="2">Fits in a bag</option>
-          <option value="3">Fits in a car</option>
-          <option value="4">Fits in a big car</option>
-          <option value="4">Fits in a van</option>
-        </select>
-        <input type="text" class="form-control input-lg" placeholder="Pick-up address">
-        <input type="text" class="form-control input-lg" placeholder="Delivery address">
-        <input type="date" name="bday">
-        <%=link_to "Search", search_routes_path, class: "btn btn-primary" %>
+        <%= simple_form_for [@user, @route] do |f| %>
+
+        <div class="form-group">
+          <%= f.label :type %>
+          <%= f.text_field :type, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :origin %>
+          <%= f.text_field :origin, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :destination %>
+          <%= f.text_field :destination, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :end_date_time %>
+          <%= f.text_field :end_date_time, class: 'form-control' %>
+        </div>
+
+        <%= f.submit class: 'btn btn-primary' %>
+        <% end %>
       </form>
     </div>
   </div>
 </div>
-
-

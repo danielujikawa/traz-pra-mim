@@ -1,17 +1,24 @@
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-12">
-      <h1>All our Bringers</h1>
-    </div>
-  </div>
 
+<br>
+<br>
+<h1>Result</h1>
+<div class="container">
   <div class="row">
-    <div class="col">
-      <p>We found  bringers on our website.</p>
-      <h2> Search as sender </h2>
-          <input type='text' id='link_id'>
-          <input type='text' id='link_id'>
-              <input type='button' id='link_str' value='Search' onClick='link()'>
-    </div>
+    <% @routes.each do |route|  %>
+      <div class="col-xs-12 col-sm-4">
+
+        <!-- insert <div class="card"> -->
+        <div class="card" style="border:3px; border-radius: 25px; border-style:solid; border-color:#A9A9A9; padding: 1em;">
+          <div class="card-category"><font color="black">Price: <%#=route.price %></font></div>
+          <div class="card-description">
+            <font color="black"><h2>From <%= route.origin %> at <%= route.start_date_time.strftime("%d/%m/%y") %></h2></font>
+            <font color="black"><h2>To <%= route.destination %> at <%= route.end_date_time.strftime("%d/%m/%y")
+ %></h2></font>
+          </div>
+          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+            <a class="card-link" href=<%= route_path(route) %> ></a>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
