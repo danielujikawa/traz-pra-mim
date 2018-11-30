@@ -95,7 +95,7 @@ routes_attributes = [
     price: "18",
     comment: "I am moving back to Rio by car but travelling light, feel free to meet me at my address for the item pickup.",
     user: users.sample
-  }
+  },
   {
     start_date_time: '30/12/2018',
     end_date_time: '31/12/2019',
@@ -105,7 +105,7 @@ routes_attributes = [
     price: "10",
     comment: "Going to Rio for a New Year`s job, and could deliver any small size item that could fit in my pocket.",
     user: users.sample
-  }
+  },
   {
     start_date_time: '01/12/2018',
     end_date_time: '02/12/2018',
