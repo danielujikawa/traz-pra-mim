@@ -2,10 +2,7 @@
   <div>
     <h3>Your order has been accepted!</h4>
     </div>
-      <div>
-      <h4>Find your order details below</h5>
-      </div>
-        <div id="details">
+       <div id="details">
           <p><span class="glyphicon glyphicon-user"> </span>  <strong>Sender: </strong><%= @route.user.username %></p>
           <p><span class="glyphicon glyphicon-map-marker"></span><strong> Origin:</strong> <%= @route.origin %></p>
           <p><span class="glyphicon glyphicon-map-marker"> </span><strong> Destination:</strong> <%= @route.destination %></p>
@@ -13,5 +10,9 @@
         </div>
        <div id="you_paid">
          <h4><span class="glyphicon glyphicon-piggy-bank"> </span>  <strong>Price R$:</strong><%=@route.price%></h4>
-       </div>
+        </div>
+        <div id="button_order">
+          <%= link_to "Back to Homepage", root_path, :class => "btn btn-success" %>
+        </div>
+
 </div>
