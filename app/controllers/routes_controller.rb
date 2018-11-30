@@ -5,7 +5,7 @@ class RoutesController < ApplicationController
     @routes = @routes.where(capacity: params[:query_type]) if params[:query_type].present?
     @routes = @routes.search_by_origin(params[:query_origin]) if params[:query_origin].present?
     @routes = @routes.search_by_destination(params[:query_destination]) if params[:query_destination].present?
-    @routes = @routes.where(end_date_time: params[:query_end_date_time]) if params[:query_end_date_time].present?
+    @routes = @routes.where(end_date_time: params[:query_delivery_date]) if params[:query_delivery_date].present?
   end
 
   def home

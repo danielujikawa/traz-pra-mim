@@ -2,7 +2,7 @@
   <div class="banner">
     <div class="banner-content">
       <h1>A faster and cheaper delivery</h1>
-      <br>
+      <p>Search as a sender</p>
       <!--Home page form test 3 -->
 
 <div class="container">
@@ -10,19 +10,21 @@
         <div class="col-lg-12 col-md-1 col-sm-1 col-xs-1">
           <%= form_tag routes_path, method: :get, class: 'form-inline' do %>
 
-          <%= select_tag :query_type, Route::CATEGORIES.html_safe, :required => true, class: 'form-control', placeholder:"Size of your Item" %>
+          <%= select_tag :query_type, Route::CATEGORIES.html_safe, :required => true, class: 'form-control', placeholder: "Size of your Item" %>
             <!-- type is our capacity -->
 
             <%= text_field_tag :query_origin, params[:query_origin], :required => true, class: "form-control",
-            placeholder: "Pick-up address"%>
+            placeholder: "Pick-up address"
+            %>
 
-            <%= text_field_tag :query_destination, params[:query_destination], :required => true, class: "form-control",
-            placeholder: "Delivery address"%>
+            <%= text_field_tag :query_destination, params[:query_destination], :required => true, class: "form-control", placeholder: "Delivery address"
+            %>
 
             <%= date_field_tag :query_delivery_date, "", :required => false, class: "form-control",
-            placeholder: "Delivery date"%>
+            placeholder: "Delivery date"
+            %>
 
-            <%= submit_tag "Find routes", class: "btn btn-success" %>
+            <%= submit_tag "Find routes", class: "btn btn-primary" %>
 
             <% end %>
           </div>
