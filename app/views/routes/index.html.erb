@@ -1,23 +1,28 @@
-<h1>Search Results</h1>
-
 <div class="container">
+<br>
 
-  <% @routes.each do |route|  %>
+<font color="black"><h4>Search Results</h4></font>
+<br>
 
-  <div class="row">
-    <div class="col-xs-12 col-sm-12">
-        <div class="card" style="border:3px; border-radius: 25px; border-style:solid; border-color:#A9A9A9; padding: 1em; font-size: 2px;">
-          <div class="card-category"><font color="black">Price: R$ <%= route.price %> </font></div>
-          <div class="card-description">
-            <font color="black"><h2>Origin: <%= route.origin %> at <%= route.start_date_time.strftime("%d/%m/%y") %></h2></font>
-            <font color="black"><h2>Destination: <%= route.destination %> at <%= route.end_date_time.strftime("%d/%m/%y")%></h2></font>
+  <% if @routes.any? %>
+    <div class="row">
+      <% @routes.each do |route|  %>
+        <div class="col-xs-12 col-sm-12">
+          <div class="card" style="font-color: black; border-radius: 20px; background-color: white; padding: 1em; box-shadow: 2px 2px 4px 1px grey; text-shadow: none; width: 700px">
+            <p><span class="glyphicon glyphicon-piggy-bank"></span><strong> Price: </strong>R$ <%= route.price %></p>
+            <br>
+              <p><span class="glyphicon glyphicon-map-marker"> </span><strong>Origin: </strong><%= route.origin %> at <%= route.start_date_time.strftime("%d/%m/%y") %></p>
+              <p><span class="glyphicon glyphicon-map-marker"> </span><strong>Destination: </strong><%= route.destination %> at <%= route.end_date_time.strftime("%d/%m/%y")%></p>
+            <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+            <a class="card-link" href=<%= route_path(route) %> ></a>
           </div>
-          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
-          <a class="card-link" href=<%= route_path(route) %> ></a>
+          <br>
         </div>
+      <% end %>
     </div>
-    <% end %>
-  </div>
+  <% else %>
+    <br><font color=841818><h2>No trips found. Try again.</h2></font>
+  <% end %>
 </div>
-
+<br>
 <p><%= link_to 'Back to Homepage', "/" %></p>

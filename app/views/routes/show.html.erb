@@ -1,37 +1,12 @@
 
 <div class="container">
-
-  <div class="row">
-    <div class="card-route-details">
-      <div class="card-route-summary">
-        <h2>TRIP DETAILS</h2>
-        <div class="row">
-          <p class="col-md-2"><strong>Origin:</strong></p>
-          <p class="col-md-10"><%= @route.origin %></p>
-        </div>
-        <div class="row">
-          <p class="col-md-2"><strong>Destination:</strong></p>
-          <p class="col-md-10"><%= @route.destination %></p>
-        </div>
-        <div class="row">
-          <p class="col-md-2"><strong>Arriving date:</strong></p>
-          <p class="col-md-10"><%= @route.end_date_time.strftime("%d/%m/%y") %></p>
-        </div>
-        <div class="row">
-          <p class="col-md-2"><strong>Size of the item:</strong></p>
-          <p class="col-md-10"><%=@route.capacity%></p>
-        </div>
-        <div class="row">
-          <p class="col-md-2"><strong>Price:</strong></p>
-          <p class="col-md-10">R$<%=@route.price%></p>
-        </div>
-        <div class="row">
-          <p class="col-md-2"><strong>Comment:</strong></p>
-          <p class="col-md-10"><%=@route.comment%></p>
-        </div>
-      </div>
+  <div class="row-show">
+    <h4>Bringer Details</h4>
+    <div class="col-md-1">
+      <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
     </div>
-  </div>
+      <p><strong><%= @route.user.username %></strong></p>
+      <p><strong>Reviews</strong> No comment</p>
 
   <div class="row">
     <div class="row">
@@ -55,5 +30,17 @@
     </div>
     <%= button_to "Confirm Order", {:controller => "orders", :action => "create"}, params: { route_id: @route.id }, :class => "btn btn-primary" %>
   </div>
-
+  <div class="row-show">
+    <h4>Trip Details</h4>
+      <p><span class="glyphicon glyphicon-map-marker"> </span> <strong>Origin:</strong> <%= @route.origin %></p>
+      <p><span class="glyphicon glyphicon-map-marker"> </span> <strong>Destination:</strong> <%= @route.destination %></p>
+      <p><span class="glyphicon glyphicon-calendar"> </span> <strong>Arriving date:</strong> <%= @route.end_date_time.strftime("%d/%m/%y") %></p>
+      <p><span class="glyphicon glyphicon-folder-close"> </span>
+<strong>Size of the item:</strong> <%=@route.capacity%></p>
+      <p><span class="glyphicon glyphicon-piggy-bank"> </span>  <strong>Price:</strong> R$<%=@route.price%></p>
+      <p><span class="glyphicon glyphicon-comment"> </span> <strong>Comment:</strong> <%=@route.comment%></p>
+      <%= button_to "Confirm Order", {:controller => "orders", :action => "create"}, params: { route_id: @route.id }, :class => "btn btn-success" %>
+  </div>
 </div>
+
+
