@@ -7,7 +7,8 @@
 
         <%= form_tag routes_path, method: :get, class: 'form-inline' do %>
 
-          <%= select_tag :query_type, "<option>Fits in a pocket<option>Fits in a bag<option>Fits in a car<option>Fits in a big car<option>Fits in a van<option>".html_safe, :required => true, class: 'form-control', placeholder: "Size of your Item" %>
+          <%= select_tag :query_type, " <option value="" disabled selected>Size of your item</option><option>Fits in a pocket<option>Fits in a bag<option>Fits in a car<option>Fits in a big car<option>Fits in a van".html_safe, :required => true, class: 'form-control', placeholder: "Size of your Item" %>
+  <!-- type is our capacity -->
 
           <%= text_field_tag :query_origin, params[:query_origin], :required => true, class: "form-control",
           placeholder: "Pick-up address"
