@@ -1,9 +1,17 @@
-<h1>Congratulations! Your order was accepted!</h1>
-<br><br> <br>
-<h2>Find your order details below:</h2>
-<p><%= @route.user.username %></p>
-<p><%= @route.origin %></p>
-<p><%= @route.destination %></p>
-<p>Arriving date <%= @route.end_date_time.strftime("%d/%m/%y") %></p>
-<br><br>
-<h2>You paid R$<%=@route.price%></h2>
+<div class="container" id="card_order">
+  <div>
+    <h3>Your order has been accepted!</h4>
+    </div>
+      <div>
+      <h4>Find your order details below</h5>
+      </div>
+        <div id="details">
+          <p><span class="glyphicon glyphicon-user"> </span>  <strong>Sender: </strong><%= @route.user.username %></p>
+          <p><span class="glyphicon glyphicon-map-marker"></span><strong> Origin:</strong> <%= @route.origin %></p>
+          <p><span class="glyphicon glyphicon-map-marker"> </span><strong> Destination:</strong> <%= @route.destination %></p>
+          <p><span class="glyphicon glyphicon-calendar"> </span> <strong>Arriving date:</strong> <%= @route.end_date_time.strftime("%d/%m/%y") %></p>
+        </div>
+       <div id="you_paid">
+         <h4><span class="glyphicon glyphicon-piggy-bank"> </span>  <strong>Price R$:</strong><%=@route.price%></h4>
+       </div>
+</div>

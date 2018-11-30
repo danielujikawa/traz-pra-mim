@@ -8,6 +8,27 @@
       <p><strong><%= @route.user.username %></strong></p>
       <p><strong>Reviews</strong> No comment</p>
 
+  <div class="row">
+    <div class="row">
+      <div class="card-bringer-details">
+        <div class="card-bringer-infos">
+          <h2>BRINGER DETAILS</h2>
+          <div class="col-md-1">
+            <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+          </div>
+          <div class="col-md-3">
+            <ul>
+              <p><strong><%= @route.user.username %></strong></p>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <p><strong>Reviews</strong></p>
+            <p>No comment</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= button_to "Confirm Order", {:controller => "orders", :action => "create"}, params: { route_id: @route.id }, :class => "btn btn-primary" %>
   </div>
   <div class="row-show">
     <h4>Trip Details</h4>
