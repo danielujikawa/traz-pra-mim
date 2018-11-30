@@ -2,13 +2,13 @@
   <div class="banner">
     <div class="banner-content">
       <h1>A faster and cheaper delivery</h1>      <!--Home page form test 3 -->
+      <br><br>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-1 col-sm-1 col-xs-1">
+            <%= form_tag routes_path, method: :get, class: 'form-inline' do %>
 
-<div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-1 col-sm-1 col-xs-1">
-          <%= form_tag routes_path, method: :get, class: 'form-inline' do %>
-
-          <%= select_tag :query_type, Route::CATEGORIES.html_safe, :required => true, class: 'form-control', placeholder: "Size of your Item" %>
+            <%= select_tag :query_type, Route::CATEGORIES.html_safe, :required => true, class: 'form-control', placeholder: "Size of your Item" %>
             <!-- type is our capacity -->
 
             <%= text_field_tag :query_origin, params[:query_origin], :required => true, class: "form-control",
@@ -26,8 +26,8 @@
 
             <% end %>
           </div>
-          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
