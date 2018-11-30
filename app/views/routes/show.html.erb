@@ -53,7 +53,7 @@
         </div>
       </div>
     </div>
-    <%= button_to "Confirm Order", class: "btn btn-primary", :controller => "orders", :action => "create", params: { route_id: @route.id }  %>
+    <%= button_to "Confirm Order", {:controller => "orders", :action => "create"}, params: { route_id: @route.id }, :class => "btn btn-primary" %>
   </div>
 
 </div>
