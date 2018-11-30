@@ -1,17 +1,11 @@
 class RoutesController < ApplicationController
 
   def index
-    @routes = []
-    if params[:query_type].present?
-      @routes = Route.where(capacity: params[:query_type])
-    elsif params[:query_origin].present?
-      @routes = Route.where(origin: params[:query_origin])
-    elsif params[:query_destination].present?
-      @routes = Route.where(destination: params[:query_destination])
-    elsif params[:query_end_date_time].present?
-      @routes = Route.where(end_date_time: params[:query_end_date_time])
-    end
-
+    @routes = Route.all
+    @routes = @routes.where(capacity: params[:query_type]) if params[:query_type].present?
+    @routes = @routes.search_by_origin(params[:query_origin]) if params[:query_origin].present?
+    @routes = @routes.search_by_destination(params[:query_destination]) if params[:query_destination].present?
+    @routes = @routes.where(end_date_time: params[:query_end_date_time]) if params[:query_end_date_time].present?
   end
 
   def home
